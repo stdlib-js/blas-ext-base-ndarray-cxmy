@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,16 +16,27 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { complex64ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Multiply elements of a one-dimensional single-precision complex floating-point ndarray by the corresponding elements of a second one-dimensional single-precision complex floating-point ndarray and assign the results to the second ndarray.
+* Multiplies elements of a one-dimensional single-precision complex floating-point ndarray by the corresponding elements of a second one-dimensional single-precision complex floating-point ndarray and assigns the results to the second ndarray.
 *
-* @module @stdlib/blas-ext-base-ndarray-cxmy
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a one-dimensional output ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Complex64Vector = require( '@stdlib/ndarray-vector-complex64' );
-* var cxmy = require( '@stdlib/blas-ext-base-ndarray-cxmy' );
 *
 * var x = new Complex64Vector( [ 1.0, 2.0, 3.0, -1.0, 0.0, 1.0 ] );
 * var y = new Complex64Vector( [ 2.0, 1.0, -1.0, 3.0, 4.0, 0.0 ] );
@@ -33,12 +44,9 @@
 * var out = cxmy( [ x, y ] );
 * // returns <ndarray>[ <Complex64>[ 0.0, 5.0 ], <Complex64>[ 0.0, 10.0 ], <Complex64>[ 0.0, 4.0 ] ]
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function cxmy( arrays: [ complex64ndarray, complex64ndarray ] ): complex64ndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = cxmy;
